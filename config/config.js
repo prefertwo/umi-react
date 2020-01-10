@@ -13,7 +13,17 @@ export default {
   routes: [
     {
       path: '/',
-      component: './HelloWord'
+      component: '../layout',
+      routes: [
+        {
+          path: '/',
+          component: 'HelloWord'
+        },
+        {
+          path: '/helloword',
+          component: 'HelloWord'
+        }
+      ]
     }
   ]
 
