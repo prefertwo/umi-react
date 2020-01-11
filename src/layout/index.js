@@ -1,13 +1,16 @@
 import {Component} from 'react'
 import {Layout, Menu, Icon} from 'antd'
+import {Link} from 'umi'
 
 const {Header, Footer, Sider, Content} = Layout
+
+
 
 class BasicLayout extends Component {
   render() {
     return (
       <Layout>
-        <Sider width={200} style={{minHeight: '100vh', color: 'white'}}>
+        <Sider width={200} style={{minHeight: '100vh', overflow: 'scroll', color: 'white'}}>
           <div style={{height: '32px', margin: '16px', backgroundColor: 'rgba(255,255,255, .2)'}}></div>
           <Menu
             defaultSelectedKeys={['1']}
@@ -15,23 +18,37 @@ class BasicLayout extends Component {
             theme="dark"
           >
             <Menu.Item key="1">
-              <Icon type="pie-chart" />
-              <span>第一个菜单</span>
+              <Link to="/helloword">
+                <Icon type="pie-chart" />
+                <span>第一个菜单</span>
+              </Link>
             </Menu.Item>
             <Menu.Item key="2">
-              <Icon type="area-chart" />
-              <span>第二个菜单</span>
+              <Link to="/404">
+                <Icon type="area-chart" />
+                <span>404Page</span>
+              </Link>
             </Menu.Item>
             <Menu.SubMenu
-              title={<span><Icon type="radar-chart" /><span>含二级子菜单</span> </span>}
+              title={<span><Icon type="radar-chart" /><span>DashBoard</span> </span>}
             >
               <Menu.Item key="3">
-                <Icon type="box-plot" />
-                <span>第三个菜单</span>
+                <Link to="/dashboard/analysis">
+                  <Icon type="box-plot" />
+                  <span>分析页</span>
+                </Link>
               </Menu.Item>
               <Menu.Item key="4">
-                <Icon type="sliders" />
-                <span>第四个菜单</span>
+                <Link to="/dashboard/monitor">
+                  <Icon type="sliders" />
+                  <span>监控页</span>
+                </Link>
+              </Menu.Item>
+              <Menu.Item key="5">
+                <Link to="/dashboard/workspace">
+                  <Icon type="sliders" />
+                  <span>工作台</span>
+                </Link>
               </Menu.Item>
             </Menu.SubMenu>
           </Menu>
