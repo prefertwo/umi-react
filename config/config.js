@@ -17,12 +17,35 @@ export default {
       routes: [
         {
           path: '/',
-          component: 'HelloWord'
+          redirect: '/helloword'
+          // component: 'HelloWord'
         },
         {
           path: '/helloword',
           component: 'HelloWord'
+        },
+        {
+          path: '/dashboard',
+          routes: [
+            {
+              path: '/dashboard/analysis',
+              component: './Dashboard/Analysis'
+            },
+            {
+              path: '/dashboard/monitor',
+              component: './Dashboard/Monitor'
+            },
+            {
+              path: '/dashboard/workspace',
+              component: './Dashboard/Workspace'
+            }
+          ]
+        },
+        {
+          path: '/404',
+          component: '404'
         }
+        
       ]
     }
   ]
