@@ -5,7 +5,10 @@ export default {
   plugins: [
     ['umi-plugin-react', {
       /* 添加插件相关配置 */
-      antd: true
+      antd: true,
+      dva: {
+        hmr: true
+      },
     }]
 
   ],
@@ -42,12 +45,27 @@ export default {
           ]
         },
         {
+          path: '/puzzlecards',
+          component: 'Puzzlecards'
+        },
+        {
           path: '/404',
           component: '404'
+        },
+        {
+          path: '/list',
+          component: 'list'
         }
         
       ]
     }
-  ]
+  ],
+  /* 代理 */
+  proxy: {
+    '/dev': {
+      target: 'https://08ad1pao69.execute-api.us-east-1.amazonaws.com',
+      changeOrigin: true
+    }
+  }
 
 };

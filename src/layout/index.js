@@ -20,13 +20,25 @@ class BasicLayout extends Component {
             <Menu.Item key="1">
               <Link to="/helloword">
                 <Icon type="pie-chart" />
-                <span>第一个菜单</span>
+                <span>Card</span>
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="11">
+              <Link to="/puzzlecards">
+                <Icon type="pie-chart" />
+                <span>CardList</span>
               </Link>
             </Menu.Item>
             <Menu.Item key="2">
               <Link to="/404">
                 <Icon type="area-chart" />
                 <span>404Page</span>
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="2">
+              <Link to="/list">
+                <Icon type="area-chart" />
+                <span>CardList</span>
               </Link>
             </Menu.Item>
             <Menu.SubMenu
